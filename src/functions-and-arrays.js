@@ -6,15 +6,33 @@ function maxOfTwoNumbers() {}
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
-
+function findLongestWord(wordArray) {
+  let longestWord = '';
+  
+  for (let word of wordArray) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  
+  return longestWord;
+}
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numberArray) {
+  let sum = 0;
+  
+  for (let number of numberArray) {
+    sum += number;
+  }
+  
+  return sum;
+}
 
+const totalSum = sumNumbers(numbers);
 
 
 // Iteration #3.1 Bonus:
@@ -26,14 +44,30 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numberArray) {
+  const totalSum = sumNumbers(numberArray);
+  const average = totalSum / numberArray.length;
+  
+  return average;
+}
+const average = averageNumbers(numbersAvg);
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordArray) {
+  let totalLength = 0;
 
+  for (let word of wordArray) {
+    totalLength += word.length;
+  }
+
+  const averageLength = totalLength / wordArray.length;
+  return averageLength;
+}
+
+const averageLength = averageWordLength(words);
 // Bonus - Iteration #4.1
 function avg() {}
 
@@ -52,8 +86,19 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordArray) {
+  let uniqueArray = [];
 
+  for (let word of wordArray) {
+    if (!uniqueArray.includes(word)) {
+      uniqueArray.push(word);
+    }
+  }
+
+  return uniqueArray;
+}
+
+const uniqueWords = uniquifyArray(words);
 
 
 // Iteration #6: Find elements
@@ -78,8 +123,20 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordArray, wordToSearch) {
+  let count = 0;
 
+  for (let word of wordArray) {
+    if (word === wordToSearch) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+const wordToFind = 'matter';
+const countOfWord = howManyTimes(words, wordToFind);
 
 
 // Iteration #8: Bonus
